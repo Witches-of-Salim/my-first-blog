@@ -1,10 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'blog/base.html' %}
 
-</body>
-</html>
+    {% block title %}
+        Контакт
+    {% endblock %}
+
+    {% block content %}
+
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <p>{{ contact.last_name }} {{ contact.first_name }} - {{ contact.phone }}</p>
+                </li>
+        </ul>
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td>Фамилия</td>
+                <td>{{ contact.last_name }}</td>
+            </tr>
+            <tr>
+                <td>Имя</td>
+                <td>{{ contact.first_name }}</td>
+            </tr>
+            <tr>
+                <td>Отчество</td>
+                <td>{{ contact.patronymic }}</td>
+            </tr>
+            <tr>
+                <td>Дата рождения</td>
+                <td>{{ contact.date_of_birth }}</td>
+            </tr>
+            <tr>
+                <td>Телефон</td>
+                <td>{{ contact.phone }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <td>Страница в соц. сети</td>
+                <td>{{ contact.social_page_networks }}</td>
+            </tr>
+            <tr>
+                <td>Описание</td>
+                <td>{{ contact.deck }}</td>
+
+             </tr>
+            </tbody>
+        </table>
+    {% endblock %}
